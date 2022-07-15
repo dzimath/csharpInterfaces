@@ -4,26 +4,26 @@ using System.Text;
 
 namespace EXE_Montadoras.Services
 {
-    internal class PirelliServices : Interface1
+    class PirelliServices : IServicos
     {
         int Qtd { get; set; }
-        public double ValorFrete(double frete, int quantidade)
+        public double ValorFrete(int quantidade)
         {
             Qtd = quantidade;
 
             if (quantidade > 50)
             {
-                return frete = 20.0;
+                return 20.0;
             }
             else
             {
-                return frete = 50.0;
+                return 50.0;
             }
         }
 
-        public DateTime Entrega(DateTime dataPedido)
+        public DateTime Entrega(int qtde, DateTime dataPedido)
         {
-            if (Qtd > 50)
+            if (qtde > 50)
             {
                 return dataPedido.AddDays(20);
             }
